@@ -1,0 +1,416 @@
+<!DOCTYPE html><html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Muhammad Yusuf — UI/UX Designer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#e2dfff",
+            "secondary-fixed": "#e2dfff",
+            "inverse-on-surface": "#2d2e48",
+            "inverse-surface": "#e1e0ff",
+            "secondary": "#c1c1ff",
+            "on-secondary-fixed": "#0e0663",
+            "primary-fixed-dim": "#c2c1ff",
+            "tertiary": "#c2c1ff",
+            "on-tertiary-fixed-variant": "#40407e",
+            "on-secondary": "#252477",
+            "on-surface-variant": "#c8c5d1",
+            "primary-container": "#1a1953",
+            "secondary-fixed-dim": "#c1c1ff",
+            "outline-variant": "#47464f",
+            "on-secondary-fixed-variant": "#3d3d8e",
+            "surface-bright": "#363751",
+            "on-surface": "#e1e0ff",
+            "on-tertiary-container": "#8382c5",
+            "surface-container-low": "#181932",
+            "outline": "#918f9b",
+            "primary-fixed": "#e2dfff",
+            "on-primary-fixed-variant": "#40407b",
+            "error": "#ffb4ab",
+            "on-secondary-container": "#b1b1ff",
+            "on-tertiary-fixed": "#141150",
+            "surface-variant": "#31324d",
+            "inverse-primary": "#585894",
+            "surface": "#101129",
+            "error-container": "#93000a",
+            "surface-dim": "#101129",
+            "on-error-container": "#ffdad6",
+            "on-primary-container": "#8383c2",
+            "tertiary-container": "#1a1856",
+            "on-background": "#e1e0ff",
+            "surface-container-highest": "#31324d",
+            "on-error": "#690005",
+            "on-primary": "#2a2963",
+            "background": "#101129",
+            "surface-container-high": "#262841",
+            "secondary-container": "#3f3f91",
+            "on-tertiary": "#2a2966",
+            "surface-container": "#1c1d36",
+            "surface-container-lowest": "#0a0b24",
+            "primary": "#c2c1ff",
+            "tertiary-fixed-dim": "#c2c1ff",
+            "surface-tint": "#c2c1ff",
+            "on-primary-fixed": "#14124d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin": "3rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "code": ["Inter"],
+            "display-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Inter"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display": ["4rem", { "lineHeight": "4.5rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "code": ["0.8125rem", { "lineHeight": "1.25rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-mobile": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased selection:bg-primary-container selection:text-primary min-h-screen flex flex-col">
+<!-- TOP APP BAR / SHARED COMPONENT -->
+<header class="sticky top-0 w-full z-50 bg-surface/85 backdrop-blur-md dark:bg-surface/85 border-b border-outline-variant/40 dark:border-outline-variant/40">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between h-16">
+<a class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface dark:text-on-surface flex items-center gap-space-xs group" href="#home">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-primary-container transition-transform group-hover:scale-125"></span>
+<span>YUSUF</span>
+</a>
+<!-- 5 Specified Navigation Links: Home, About, Projects, Experience, Education -->
+<nav aria-label="Main Navigation" class="hidden md:flex items-center gap-6 font-body-md text-body-md">
+<a class="text-primary font-medium hover:text-primary transition-colors duration-150" href="#home">Home</a>
+<a class="text-on-surface-variant font-normal hover:text-primary transition-colors duration-150" href="#about">About</a>
+<a class="text-on-surface-variant font-normal hover:text-primary transition-colors duration-150" href="#projects">Projects</a>
+<a class="text-on-surface-variant font-normal hover:text-primary transition-colors duration-150" href="#experience">Experience</a>
+<a class="text-on-surface-variant font-normal hover:text-primary transition-colors duration-150" href="#education">Education</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center justify-center font-label-md text-label-md font-medium px-4 py-2 rounded-lg bg-primary-container text-white border border-on-tertiary hover:bg-secondary-container transition-all duration-150 shadow-sm" href="#about">
+          Get in Touch
+        </a>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-grow max-w-[1200px] w-full mx-auto px-margin-mobile md:px-margin">
+<!-- SECTION 1 — HOME (HERO) -->
+<section class="pt-16 pb-20 md:py-28 flex flex-col md:flex-row items-center justify-between gap-12" id="home">
+<div class="flex-1 space-y-6 text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-container/60 border border-on-tertiary">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary tracking-wide">Available for Work &amp; Collaboration</span>
+</div>
+<div class="space-y-2">
+<h1 class="font-display-mobile md:font-display text-display-mobile md:text-display font-bold text-white tracking-tight">
+            Hi, I'm <span class="text-primary">Muhammad Yusuf</span>
+</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant font-semibold">
+            Web Developer
+          </p>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto md:mx-0">
+          Saya tertarik dalam pengembangan website dan aplikasi berbasis web. Berfokus pada arsitektur kode yang bersih, responsif, dan fungsional.
+        </p>
+<div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-4">
+<a class="inline-flex items-center gap-2 bg-primary-container hover:bg-secondary-container text-white font-label-md text-label-md px-6 py-3 rounded-lg border border-on-tertiary transition-all duration-150" href="#projects">
+<span>View Projects</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 bg-transparent hover:bg-surface-container text-white font-label-md text-label-md px-6 py-3 rounded-lg border border-on-tertiary transition-all duration-150" href="mailto:yusuf@example.com?subject=CV%20Request%20-%20Muhammad%20Yusuf">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Download CV</span>
+</a>
+</div>
+</div>
+<!-- Avatar Visual -->
+<div class="flex-shrink-0 relative">
+<div class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-on-tertiary to-secondary-container opacity-40 blur-xl"></div>
+<div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-on-tertiary shadow-2xl bg-surface">
+<img alt="Professional portrait of Muhammad Yusuf" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBR2zoro9vq_p-HuxvZnrKI2wlfgQLpNFElcqZbyiDNv7p8wiFeCflMPcK9IYhdXZ3rlVxEZCKdY6ZKPIIhZt2xEpbJzuZV8PKzMNcOyaPXkEF2NeuoRl9tDoxMQndNxAocnEA6ZRNUWNW0UYWCw-TtMdLuCWYxgtH-LYvUREo_UwaNDuEUg-XPWfHhjDU7pNLbblCk9LA_qzxRkcQXYj_sXriVJMgZjVSbUzS8Xb6uSYRe1hh45AuyKBoly74sIa0ghI">
+</div>
+</div>
+</section>
+<!-- SECTION 2 — ABOUT -->
+<section class="py-16 border-t border-outline-variant/30" id="about">
+<div class="mb-8">
+<span class="font-label-sm text-label-sm font-semibold text-secondary tracking-widest uppercase">Profile &amp; Background</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-semibold text-white mt-1">About Me</h2>
+</div>
+<div class="bg-surface rounded-2xl border border-on-tertiary p-6 md:p-8 space-y-8">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+<div class="w-24 h-24 rounded-xl overflow-hidden border border-on-tertiary flex-shrink-0 bg-surface-container-lowest">
+<img alt="Muhammad Yusuf small thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmNelOoT8VV_dWI9laFn1W-d9vor8wpoQodIx1rkuijKihGkQ_0nBLWQPziXsAwgDK7pD5m66n3wsFs278uWWdQ0sB5ZOYXwZtN_CIlnSU0rBFpUtNAYRIP51TGL_yXzWAOV-G_9NOqkZ_gdYOWQmhUxOfJOcJxiNM6CEbUj5nkeAlwPHltw7aOsTkH2E-4EVlATEwxMImdSOi6tVgTtIKirkYsTDOJfPzn1FY3UlZw_p489VokivaleWM6HyClwe4nh0XqljqveFNgm8">
+</div>
+<div class="space-y-3 flex-1 text-center md:text-left">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-white">Muhammad Yusuf</h3>
+<p class="font-body-sm text-body-sm text-secondary">Web Developer &amp; Software Engineering Enthusiast</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Saya memiliki minat mendalam dalam rancang bangun sistem berbasis web yang efisien. Terbiasa memecahkan masalah logika pemrograman serta menerjemahkan kebutuhan operasional ke dalam antarmuka aplikasi digital yang intuitif dan tangguh.
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Tujuan karier saya berfokus pada membangun aplikasi web modern berskala besar, memperkuat kapabilitas dalam arsitektur backend maupun antarmuka pengguna yang terstruktur, serta terus beradaptasi dengan inovasi standar industri web.
+            </p>
+</div>
+</div>
+<!-- Nested Let's Connect Block Inside About Section -->
+<div class="pt-6 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="space-y-1 text-center sm:text-left">
+<h4 class="font-headline-sm text-headline-sm text-white font-medium">Let's Connect</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Terbuka untuk diskusi proyek web, tawaran magang, atau peluang kerja sama.</p>
+</div>
+<div class="flex items-center gap-3">
+<a class="p-2.5 rounded-lg bg-primary-container text-white border border-on-tertiary hover:bg-secondary-container transition-colors duration-150 flex items-center justify-center" href="mailto:yusuf@example.com" title="Email Muhammad Yusuf">
+<span class="material-symbols-outlined text-xl">mail</span>
+</a>
+<a class="p-2.5 rounded-lg bg-surface-container text-white border border-on-tertiary hover:bg-primary-container transition-colors duration-150 flex items-center justify-center" href="https://github.com" rel="noopener noreferrer" target="_blank" title="GitHub Profile">
+<span class="material-symbols-outlined text-xl">code</span>
+</a>
+<a class="p-2.5 rounded-lg bg-surface-container text-white border border-on-tertiary hover:bg-primary-container transition-colors duration-150 flex items-center justify-center" href="https://linkedin.com" rel="noopener noreferrer" target="_blank" title="LinkedIn Profile">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="p-2.5 rounded-lg bg-surface-container text-white border border-on-tertiary hover:bg-primary-container transition-colors duration-150 flex items-center justify-center" href="https://instagram.com" rel="noopener noreferrer" target="_blank" title="Instagram Profile">
+<span class="material-symbols-outlined text-xl">photo_camera</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3 — PROJECTS -->
+<section class="py-16 border-t border-outline-variant/30" id="projects">
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label-sm text-label-sm font-semibold text-secondary tracking-widest uppercase">Portfolio Showcase</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-semibold text-white mt-1">Featured Projects</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Aplikasi dan sistem web fungsional yang dibangun untuk menyelesaikan kebutuhan nyata pengelolaan data dan media.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Project 1: Aplikasi Input Invoice -->
+
+<!-- Project 2: Website Galeri -->
+<div class="bg-surface border border-on-tertiary rounded-2xl overflow-hidden flex flex-col hover:border-secondary-container transition-all hover:-translate-y-1 duration-200">
+<div class="h-48 overflow-hidden bg-surface-container-lowest border-b border-on-tertiary relative">
+<img alt="Website Film Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxQ1DJI-eDB-uXe6AO0f0XlWmzyoWuhm2_tKLAbHBzBwAD7OoWyFNnXxNVzTfYh-5au5iuAEG8D7Qr04IKa5teeEREpj20IyEpAZQJubFMtj92snjcn_fx26reyKfgeNk5oadZrPFHE4a4HvsTyIAwQJ7c8hNvj24Ca1o4pvwqcbJcyyKJbhdvILo50eeI2rlTzt3zuhgiNg-qho9210-W5h3M9sUUwOr0e7gZ0qxiMx10ugbj804hhg">
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-white mb-2">Website Film</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-1">
+Platform katalog dan streaming film yang menampilkan daftar film populer, rating, tahun rilis, dan eksplorasi genre dengan antarmuka yang bersih dan responsif.
+</p>
+<div class="bg-surface-container-lowest/60 border border-on-tertiary/60 rounded-lg p-3 mb-4 space-y-1">
+<span class="font-label-sm text-label-sm text-secondary block font-semibold">Fitur Utama:</span>
+<p class="font-code text-code text-on-surface-variant leading-snug">
+Movie catalog, rating &amp; release year filter, interactive detail view, responsive design.
+</p>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-primary-container/70 text-white border border-on-tertiary">UI Design</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-primary-container/70 text-white border border-on-tertiary">Figma</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-primary-container/70 text-white border border-on-tertiary">User Flow</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-primary-container/70 text-white border border-on-tertiary">Web App</span>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<a class="inline-flex items-center justify-center gap-1 font-label-md text-label-md py-2 px-3 rounded-lg border border-on-tertiary text-white hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>GitHub</span>
+</a>
+<a class="inline-flex items-center justify-center gap-1 font-label-md text-label-md py-2 px-3 rounded-lg bg-primary-container text-white border border-on-tertiary hover:bg-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+<span>Live Demo</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project 3: School Achievement Database -->
+<div class="bg-surface border border-on-tertiary rounded-2xl overflow-hidden flex flex-col hover:border-secondary-container transition-all hover:-translate-y-1 duration-200">
+<div class="h-48 overflow-hidden bg-surface-container-lowest border-b border-on-tertiary relative flex items-center justify-center p-2">
+<img alt="Website Invoice Preview" class="w-full h-full object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaJVzG3GYSWEPgciLTO8iy91ml7eLkp4wByaFCCam-uqpsWntXtP_9VvbgLMxePL3-dStWsBuaP_CFeL2YFqTlkA0g-xotC5__sNSzDXRMqNylq7WJ9QyDgmorkGORvorTgH2d30egL1iEZtLw1YjWxEjSXTDsNA2icZIOzQnSbsAL1En676OyQABwvCBpUNIMRK6uVyYpnMOVPTyC__maVdKMtqRcnmP7-KBqMNrXKhh1BQ9mGCR0JQ">
+<div class="absolute top-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded text-xs font-mono text-secondary border border-on-tertiary">Invoice System</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-white mb-2">Website Invoice</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-1">
+Aplikasi web manajemen tagihan dan pengiriman invoice digital secara praktis dengan integrasi multi-kanal dan validasi pembayaran terintegrasi.
+</p>
+<div class="bg-surface-container-lowest/60 border border-on-tertiary/60 rounded-lg p-3 mb-4 space-y-1">
+<span class="font-label-sm text-label-sm text-secondary block font-semibold">Fitur Utama:</span>
+<p class="font-code text-code text-on-surface-variant leading-snug">
+Input data invoice, pengiriman via Email/WhatsApp/SMS gratis, verifikasi QRIS, dan manajemen tagihan efisien.
+</p>
+</div>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-primary-container/70 text-white border border-on-tertiary">UI/UX</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-primary-container/70 text-white border border-on-tertiary">Invoice System</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-primary-container/70 text-white border border-on-tertiary">Figma</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-primary-container/70 text-white border border-on-tertiary">Web App</span>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<a class="inline-flex items-center justify-center gap-1 font-label-md text-label-md py-2 px-3 rounded-lg border border-on-tertiary text-white hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>GitHub</span>
+</a>
+<a class="inline-flex items-center justify-center gap-1 font-label-md text-label-md py-2 px-3 rounded-lg bg-primary-container text-white border border-on-tertiary hover:bg-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+<span>Live Demo</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4 — EXPERIENCE -->
+<section class="py-16 border-t border-outline-variant/30" id="experience">
+<div class="mb-8">
+<span class="font-label-sm text-label-sm font-semibold text-secondary tracking-widest uppercase">Practical Work</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-semibold text-white mt-1">Experience</h2>
+</div>
+<div class="bg-surface border border-on-tertiary rounded-2xl p-6 md:p-8 space-y-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-white tracking-tight">PT JTEKT Indonesia</h3>
+<p class="font-body-md text-body-md text-secondary font-medium mt-0.5">Finance &amp; Accounting — PKL</p>
+</div>
+<span class="self-start sm:self-center font-label-sm text-label-sm font-semibold px-3 py-1.5 rounded-full bg-primary-container text-primary border border-on-tertiary">
+            Jan 2024 – Mar 2024
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Selama menjalankan PKL, saya membantu proses administrasi pada bagian Finance &amp; Accounting, terutama dalam proses input data invoice dan pengarsipan dokumen secara akurat dan tepat waktu.
+        </p>
+<div class="pt-2">
+<h4 class="font-label-md text-label-md text-white font-semibold mb-3">Tanggung Jawab Utama:</h4>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2.5 bg-surface-container-lowest/50 p-3 rounded-lg border border-on-tertiary/40">
+<span class="material-symbols-outlined text-secondary text-lg flex-shrink-0">check_circle</span>
+<span>Melakukan input data invoice ke sistem perusahaan dengan teliti</span>
+</li>
+<li class="flex items-start gap-2.5 bg-surface-container-lowest/50 p-3 rounded-lg border border-on-tertiary/40">
+<span class="material-symbols-outlined text-secondary text-lg flex-shrink-0">check_circle</span>
+<span>Melakukan pengarsipan dokumen&nbsp; Invoice</span>
+</li>
+
+
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION 5 — EDUCATION -->
+<section class="py-16 border-t border-outline-variant/30 mb-12" id="education">
+<div class="mb-8">
+<span class="font-label-sm text-label-sm font-semibold text-secondary tracking-widest uppercase">Academic Background</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-semibold text-white mt-1">Education</h2>
+</div>
+<!-- School Card -->
+<div class="bg-surface border border-on-tertiary rounded-2xl p-6 md:p-8 mb-10 space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-white">SMKN 1 Karawang</h3>
+<p class="font-body-md text-body-md text-secondary font-medium">Jurusan PPLG (Pengembangan Perangkat Lunak dan Gim)</p>
+</div>
+<span class="self-start sm:self-center font-label-sm text-label-sm px-3 py-1.5 rounded-full bg-primary-container text-primary border border-on-tertiary font-semibold">2025-2027</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Mendapatkan pondasi yang kuat mengenai rekayasa perangkat lunak, algoritma pemrograman, perancangan basis data relasional.
+        </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="font-code text-code px-3 py-1 rounded bg-surface-container-lowest border border-on-tertiary text-on-surface-variant">Software Engineering Fundamentals</span>
+<span class="font-code text-code px-3 py-1 rounded bg-surface-container-lowest border border-on-tertiary text-on-surface-variant">Web Development</span>
+<span class="font-code text-code px-3 py-1 rounded bg-surface-container-lowest border border-on-tertiary text-on-surface-variant">Object-Oriented Programming</span>
+<span class="font-code text-code px-3 py-1 rounded bg-surface-container-lowest border border-on-tertiary text-on-surface-variant">Database Management</span>
+</div>
+</div>
+<!-- Nested Certificates Gallery (No separate menu link) -->
+<div class="space-y-6">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-white">Certificates &amp; Achievements</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sertifikasi kompetensi dan pelatihan teknologi yang telah diselesaikan.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Cert 1 -->
+
+<!-- Cert 2 -->
+
+<!-- Cert 3 -->
+
+<div class="bg-surface border border-on-tertiary rounded-xl p-6 flex flex-col justify-between hover:border-secondary-container transition-all hover:-translate-y-1 duration-200"><div class="space-y-3"><div class="flex items-center justify-between gap-2"><span class="material-symbols-outlined text-secondary text-2xl">emoji_events</span><span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-primary-container text-primary border border-on-tertiary font-semibold">National</span></div><div><h4 class="font-headline-sm text-headline-sm font-semibold text-white">Top 5 Finalist — Lomba UI/UX Design</h4><p class="font-body-sm text-body-sm text-secondary font-medium mt-0.5">Universitas Pendidikan Indonesia (UPI)</p></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Penghargaan Top 5 dalam kompetisi perancangan antarmuka &amp; pengalaman pengguna tingkat nasional.</p></div><div class="pt-4 mt-2 border-t border-on-tertiary/40 flex items-center justify-between"><span class="font-code text-code text-on-surface-variant">UI/UX Competition</span><span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold"><span class="material-symbols-outlined text-base">verified</span>Verified</span></div></div></div>
+</div>
+</section>
+</main>
+<!-- FOOTER / SHARED COMPONENT -->
+<footer class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/40 dark:border-outline-variant/40">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="space-y-1 text-center md:text-left">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          © 2026 Muhammad Yusuf. Designed &amp; Developed by Muhammad Yusuf
+        </p>
+</div>
+<div class="flex items-center gap-6 font-body-sm text-body-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="https://github.com" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="mailto:yusuf@example.com">Email</a>
+</div>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
